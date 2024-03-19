@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'GXArrowView_Example' do
+  pod 'GXArrowView', :path => '../'
+
+  target 'GXArrowView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
