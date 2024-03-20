@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'GXArrowView'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of GXArrowView.'
+  s.summary          = '下拉箭头筛选'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/gaoguangxiao125@sina.com/GXArrowView'
+  s.homepage         = 'https://github.com/gaoguangxiao'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'gaoguangxiao125@sina.com' => 'gaoguangxiao125@sina.com' }
-  s.source           = { :git => 'https://github.com/gaoguangxiao125@sina.com/GXArrowView.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/gaoguangxiao/GXArrowView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'

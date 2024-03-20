@@ -10,8 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol EDArrowViewDelegate <NSObject>
+
+- (void)didSelecteYear:(NSString *)year;
+
+@end
+
 @interface EDArrowView : UIView
 
+@property (nonatomic, weak) id<EDArrowViewDelegate>delegate;
+/// 年份数据
+@property (nonatomic, copy) NSArray *yearData;
 @end
 
 NS_ASSUME_NONNULL_END

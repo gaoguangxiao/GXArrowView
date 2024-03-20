@@ -13,6 +13,7 @@
 #import "EDPellCollectionSelect.h"
 #import "EDPellselectColCell.h"
 #import "EDPellselectModel.h"
+#import "NSBundle+Pell.h"
 
 FOUNDATION_EXPORT double GXArrowViewVersionNumber;
 FOUNDATION_EXPORT const unsigned char GXArrowViewVersionString[];

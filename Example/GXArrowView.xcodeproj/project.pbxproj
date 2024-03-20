@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E78DD5B2BA99F2900B30882 /* EDArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E78DD542BA99F2800B30882 /* EDArrowView.m */; };
-		1E78DD5C2BA99F2900B30882 /* EDPellCollectionSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E78DD552BA99F2800B30882 /* EDPellCollectionSelect.m */; };
-		1E78DD5D2BA99F2900B30882 /* EDPellselectColCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E78DD562BA99F2800B30882 /* EDPellselectColCell.xib */; };
-		1E78DD5E2BA99F2900B30882 /* EDPellselectColCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E78DD582BA99F2800B30882 /* EDPellselectColCell.m */; };
 		2C3F921AD65B70F97B2EDFFF /* Pods_GXArrowView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECCCB33F3B31F43EBA34103 /* Pods_GXArrowView_Tests.framework */; };
 		47D50E002137020026B1252E /* Pods_GXArrowView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DD0791E9388EBB274923FE /* Pods_GXArrowView_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -43,11 +40,6 @@
 /* Begin PBXFileReference section */
 		0ECCCB33F3B31F43EBA34103 /* Pods_GXArrowView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GXArrowView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E78DD542BA99F2800B30882 /* EDArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDArrowView.m; sourceTree = "<group>"; };
-		1E78DD552BA99F2800B30882 /* EDPellCollectionSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDPellCollectionSelect.m; sourceTree = "<group>"; };
-		1E78DD562BA99F2800B30882 /* EDPellselectColCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EDPellselectColCell.xib; sourceTree = "<group>"; };
-		1E78DD572BA99F2800B30882 /* EDPellselectColCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDPellselectColCell.h; sourceTree = "<group>"; };
-		1E78DD582BA99F2800B30882 /* EDPellselectColCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDPellselectColCell.m; sourceTree = "<group>"; };
-		1E78DD592BA99F2800B30882 /* EDPellCollectionSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDPellCollectionSelect.h; sourceTree = "<group>"; };
 		1E78DD5A2BA99F2800B30882 /* EDArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDArrowView.h; sourceTree = "<group>"; };
 		42F20E73583F159E3D0A1E87 /* GXArrowView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GXArrowView.podspec; path = ../GXArrowView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		47DD0791E9388EBB274923FE /* Pods_GXArrowView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GXArrowView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,11 +148,6 @@
 			children = (
 				1E78DD5A2BA99F2800B30882 /* EDArrowView.h */,
 				1E78DD542BA99F2800B30882 /* EDArrowView.m */,
-				1E78DD592BA99F2800B30882 /* EDPellCollectionSelect.h */,
-				1E78DD552BA99F2800B30882 /* EDPellCollectionSelect.m */,
-				1E78DD572BA99F2800B30882 /* EDPellselectColCell.h */,
-				1E78DD582BA99F2800B30882 /* EDPellselectColCell.m */,
-				1E78DD562BA99F2800B30882 /* EDPellselectColCell.xib */,
 				6003F59C195388D20070C39A /* GGXAppDelegate.h */,
 				6003F59D195388D20070C39A /* GGXAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -297,7 +284,6 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
-				1E78DD5D2BA99F2900B30882 /* EDPellselectColCell.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -387,12 +373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E78DD5E2BA99F2900B30882 /* EDPellselectColCell.m in Sources */,
 				1E78DD5B2BA99F2900B30882 /* EDArrowView.m in Sources */,
 				6003F59E195388D20070C39A /* GGXAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* GGXViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				1E78DD5C2BA99F2900B30882 /* EDPellCollectionSelect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +507,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GXArrowView/GXArrowView-Prefix.pch";
 				INFOPLIST_FILE = "GXArrowView/GXArrowView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -539,6 +524,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GXArrowView/GXArrowView-Prefix.pch";
 				INFOPLIST_FILE = "GXArrowView/GXArrowView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

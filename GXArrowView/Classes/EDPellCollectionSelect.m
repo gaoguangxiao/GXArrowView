@@ -10,6 +10,7 @@
 #import "Masonry/Masonry.h"
 #import "EDPellselectColCell.h"
 #import "EDPellselectModel.h"
+#import "NSBundle+Pell.h"
 #import <GGXSwiftExtension/GGXSwiftExtension-Swift.h>
 
 @interface EDPellCollectionSelect ()<UICollectionViewDelegate,UICollectionViewDataSource>
@@ -18,7 +19,16 @@
 
 @property (nonatomic,copy) void(^action)(EDPellselectModel *model);
 
+/// hidden
+@property (nonatomic,copy) void(^hidden)(void);
+
 @property (nonatomic, strong) UICollectionView *collectionView;
+
+///蒙版 顶部遮罩 不透明可点击取消
+@property (nonatomic, strong) UIView *maskTopView;
+
+///蒙版 遮罩 黑色透明可点击取消
+@property (nonatomic, strong) UIView *maskView;
 
 @property (nonatomic, strong) UIView *contentView;
 
@@ -42,6 +52,8 @@ EDPellCollectionSelect * backgroundView;
 {
     self = [super initWithFrame:frame];
     if (self) {
+        [self addSubview:self.maskTopView];
+        [self addSubview:self.maskView];
         [self addSubview:self.contentView];
         [self.contentView addSubview:self.titleLab];
         [self.contentView addSubview:self.collectionView];
@@ -52,8 +64,18 @@ EDPellCollectionSelect * backgroundView;
     //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackgroundClick)];
     //    [backgroundView addGestureRecognizer:tap];
 
+        [self.maskTopView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(0);
+        }];
+        
+        [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(0);
+            make.left.bottom.right.mas_equalTo(0);
+        }];
+        
         [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.right.mas_equalTo(0);
+            make.top.mas_equalTo(self.maskView.mas_top);
+            make.left.right.mas_equalTo(0);
             make.height.mas_equalTo(0);
         }];
         
@@ -89,11 +111,13 @@ EDPellCollectionSelect * backgroundView;
         }];
         
         self.selectTitleColor = [UIColor whiteColor];
-        self.selectBackgroundColor = [UIColor colorFrom:@"0xD13D2D" alpha:1.0];
-        
+        self.selectBackgroundColor = [UIColor colorFrom:@"#D13D2D" alpha:1.0];
         
         self.normalTitleColor = [UIColor colorFrom:@"#222426" alpha:1.0];
         self.normalBackgroundColor = [UIColor colorFrom:@"#EDEDED" alpha:1.0];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackgroundClick)];
+        [self.maskTopView addGestureRecognizer:tap];
         //设置代理
 //        self.collectionView.delegate = self;
 //        self.collectionView.dataSource = self;
@@ -102,9 +126,10 @@ EDPellCollectionSelect * backgroundView;
     return self;
 }
 
-+ (EDPellCollectionSelect *)addPellTableViewSelectData:(NSArray *)selectData
++ (void)addPellTableViewSelectData:(NSArray *)selectData
                                        rect:(CGRect)rect
-                            action:(void(^)(EDPellselectModel *model))action animated:(BOOL)animate
+                            action:(void(^)(EDPellselectModel *model))action
+                            hidden:(void(^)(void))hidden animated:(BOOL)animate
 {
     if (backgroundView != nil) {
         [EDPellCollectionSelect hiden];
@@ -113,19 +138,10 @@ EDPellCollectionSelect * backgroundView;
     
     backgroundView = [[EDPellCollectionSelect alloc] initWithFrame:win.bounds];
     backgroundView.action = action;
+    backgroundView.hidden  = hidden;
     backgroundView.selectData = selectData;
-    backgroundView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6];
+//    backgroundView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6];
     [win addSubview:backgroundView];
-    
-    //将按钮frame转换相当于self.view
-//    CGRect rect = [win convertRect:view.frame fromView:view.superview];
-//    CGRect rect1 = [win convertRect:view.frame fromWindow:win];
-//    CGRect rect2 = [view convertRect:view.bounds toView:nil];
-//    CGRect rect3 = [view convertRect:view.bounds toView:win];
-    [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.mas_equalTo(0);
-        make.top.mas_equalTo(rect.origin.y);
-    }];
     
     // 计算行数
     NSInteger row = backgroundView.selectData.count/4 + (backgroundView.selectData.count%4 > 0 ? 1: 0);
@@ -133,6 +149,9 @@ EDPellCollectionSelect * backgroundView;
     CGFloat contentHeight = row * 35 + (row - 1) * 10;
     // 计算总高度
     CGFloat allHeight = contentHeight + 42 + 85;
+    [backgroundView.maskView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(rect.origin.y);
+    }];
     //高度计算
     [backgroundView.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(allHeight);
@@ -146,11 +165,9 @@ EDPellCollectionSelect * backgroundView;
 //            backgroundView.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0);
         }];
     }
-    
-    return backgroundView;
 }
 
-+ (void)tapBackgroundClick
+- (void)tapBackgroundClick
 {
     [EDPellCollectionSelect hiden];
 }
@@ -164,6 +181,7 @@ EDPellCollectionSelect * backgroundView;
 //            tableView.frame = CGRectMake(win.bounds.size.width - 35 , 64, 0, 0);
 //            collectionView.transform = CGAffineTransformMakeScale(0.000001, 0.0001);
         } completion:^(BOOL finished) {
+            backgroundView.hidden();
             [backgroundView removeFromSuperview];
 //            [collectionView removeFromSuperview];
 //            collectionView = nil;
@@ -308,10 +326,28 @@ EDPellCollectionSelect * backgroundView;
         _collectionView.backgroundColor = [UIColor whiteColor];
 
         _collectionView.contentInset = UIEdgeInsetsMake(0, 29, 0, 29);
-        UINib *cellnib = [UINib nibWithNibName:NSStringFromClass([EDPellselectColCell class]) bundle:[NSBundle mainBundle]];
+    
+        UINib *cellnib = [UINib nibWithNibName:NSStringFromClass([EDPellselectColCell class]) bundle:[NSBundle gx_pellBundle]];
         [_collectionView registerNib:cellnib forCellWithReuseIdentifier:@"EDPellselectColCell"];
     }
     return _collectionView;
+}
+
+- (UIView *)maskTopView {
+    if (!_maskTopView) {
+        _maskTopView = [UIView new];
+//        _maskTopView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.3];;
+    }
+    return _maskTopView;
+}
+
+- (UIView *)maskView {
+    if (!_maskView) {
+        _maskView = [UIView new];
+        _maskView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.3];
+        _maskView.userInteractionEnabled = NO;
+    }
+    return _maskView;
 }
 
 - (UIView *)contentView {
@@ -337,7 +373,7 @@ EDPellCollectionSelect * backgroundView;
         [_resetBtn setTitle:@"重置" forState:UIControlStateNormal];
         [_resetBtn setTitleColor:[[UIColor alloc]initWithHex:@"#919192" :1.0] forState:UIControlStateNormal];
         _resetBtn.layer.cornerRadius = 3;
-        [_resetBtn setBackgroundColor:[[UIColor alloc]initWithHex:@"#EDEDED" :1.0]];//:EDEDED]];//crazy_hex:@"#EDEDED"]];
+        [_resetBtn setBackgroundColor:[UIColor colorFrom:@"#EDEDED" alpha:1.0]];//:EDEDED]];//crazy_hex:@"#EDEDED"]];
         [_resetBtn addTarget:self action:@selector(didResetClick) forControlEvents:UIControlEventAllEvents];
     }
     return  _resetBtn;
@@ -349,7 +385,7 @@ EDPellCollectionSelect * backgroundView;
         [_confirBtn setTitle:@"确定" forState:UIControlStateNormal];
         [_confirBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         _confirBtn.layer.cornerRadius = 3;
-        [_confirBtn setBackgroundColor:[UIColor colorFrom:@"0xD13D2D" alpha:1.0]];
+        [_confirBtn setBackgroundColor:[UIColor colorFrom:@"#D13D2D" alpha:1.0]];
         [_confirBtn addTarget:self action:@selector(didConfirClick) forControlEvents:UIControlEventAllEvents];
     }
     return _confirBtn;

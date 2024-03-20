@@ -8,6 +8,7 @@
 
 #import "GGXViewController.h"
 #import "EDArrowView.h"
+#import "GXArrowView/GXArrowView-umbrella.h"
 @interface GGXViewController ()
 
 @end
@@ -21,6 +22,7 @@
     NSLog(@"ad");
     //增加年度筛选
     EDArrowView *arrowView = [[EDArrowView alloc]init];
+    arrowView.yearData = @[@"2024",@"2023",@"2022",@"2021"];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:arrowView];
     
 }

@@ -13,9 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EDPellCollectionSelect : UIView
 
-+ (EDPellCollectionSelect *)addPellTableViewSelectData:(NSArray *)selectData
-                              rect:(CGRect)rect
-                            action:(void(^)(EDPellselectModel *model))action animated:(BOOL)animate;
++ (void)addPellTableViewSelectData:(NSArray *)selectData
+                                       rect:(CGRect)rect
+                            action:(void(^)(EDPellselectModel *model))action
+                            hidden:(void(^)(void))hidden animated:(BOOL)animate;
 
 //重置
 @property (nonatomic, strong) UIButton *resetBtn;
