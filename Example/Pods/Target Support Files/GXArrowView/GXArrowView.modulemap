@@ -1,0 +1,6 @@
+framework module GXArrowView {
+  umbrella header "GXArrowView-umbrella.h"
+
+  export *
+  module * { export * }
+}

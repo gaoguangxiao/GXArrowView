@@ -1,0 +1,6 @@
+framework module Pods_GXArrowView_Tests {
+  umbrella header "Pods-GXArrowView_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

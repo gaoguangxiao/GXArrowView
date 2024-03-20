@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E78DD5B2BA99F2900B30882 /* EDArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E78DD542BA99F2800B30882 /* EDArrowView.m */; };
+		1E78DD5C2BA99F2900B30882 /* EDPellCollectionSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E78DD552BA99F2800B30882 /* EDPellCollectionSelect.m */; };
+		1E78DD5D2BA99F2900B30882 /* EDPellselectColCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E78DD562BA99F2800B30882 /* EDPellselectColCell.xib */; };
+		1E78DD5E2BA99F2900B30882 /* EDPellselectColCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E78DD582BA99F2800B30882 /* EDPellselectColCell.m */; };
 		2C3F921AD65B70F97B2EDFFF /* Pods_GXArrowView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ECCCB33F3B31F43EBA34103 /* Pods_GXArrowView_Tests.framework */; };
 		47D50E002137020026B1252E /* Pods_GXArrowView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DD0791E9388EBB274923FE /* Pods_GXArrowView_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -38,7 +42,14 @@
 
 /* Begin PBXFileReference section */
 		0ECCCB33F3B31F43EBA34103 /* Pods_GXArrowView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GXArrowView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42F20E73583F159E3D0A1E87 /* GXArrowView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = GXArrowView.podspec; path = ../GXArrowView.podspec; sourceTree = "<group>"; };
+		1E78DD542BA99F2800B30882 /* EDArrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDArrowView.m; sourceTree = "<group>"; };
+		1E78DD552BA99F2800B30882 /* EDPellCollectionSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDPellCollectionSelect.m; sourceTree = "<group>"; };
+		1E78DD562BA99F2800B30882 /* EDPellselectColCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EDPellselectColCell.xib; sourceTree = "<group>"; };
+		1E78DD572BA99F2800B30882 /* EDPellselectColCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDPellselectColCell.h; sourceTree = "<group>"; };
+		1E78DD582BA99F2800B30882 /* EDPellselectColCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDPellselectColCell.m; sourceTree = "<group>"; };
+		1E78DD592BA99F2800B30882 /* EDPellCollectionSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDPellCollectionSelect.h; sourceTree = "<group>"; };
+		1E78DD5A2BA99F2800B30882 /* EDArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDArrowView.h; sourceTree = "<group>"; };
+		42F20E73583F159E3D0A1E87 /* GXArrowView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GXArrowView.podspec; path = ../GXArrowView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		47DD0791E9388EBB274923FE /* Pods_GXArrowView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GXArrowView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F115B590D380A87E7E6D490 /* Pods-GXArrowView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXArrowView_Example.release.xcconfig"; path = "Target Support Files/Pods-GXArrowView_Example/Pods-GXArrowView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* GXArrowView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GXArrowView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,9 +75,9 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C696CCB83D9940D5A4880DE /* Pods-GXArrowView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXArrowView_Tests.release.xcconfig"; path = "Target Support Files/Pods-GXArrowView_Tests/Pods-GXArrowView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A7C751E04D251239B04C0BE5 /* Pods-GXArrowView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXArrowView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-GXArrowView_Tests/Pods-GXArrowView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		ACDCD9441B06A97305472017 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		ACDCD9441B06A97305472017 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B2BFB3FCCF198CDEB2DD2549 /* Pods-GXArrowView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXArrowView_Example.debug.xcconfig"; path = "Target Support Files/Pods-GXArrowView_Example/Pods-GXArrowView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E3C8C4BD3B06372910F61A7E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E3C8C4BD3B06372910F61A7E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +114,6 @@
 				A7C751E04D251239B04C0BE5 /* Pods-GXArrowView_Tests.debug.xcconfig */,
 				8C696CCB83D9940D5A4880DE /* Pods-GXArrowView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,6 +154,13 @@
 		6003F593195388D20070C39A /* Example for GXArrowView */ = {
 			isa = PBXGroup;
 			children = (
+				1E78DD5A2BA99F2800B30882 /* EDArrowView.h */,
+				1E78DD542BA99F2800B30882 /* EDArrowView.m */,
+				1E78DD592BA99F2800B30882 /* EDPellCollectionSelect.h */,
+				1E78DD552BA99F2800B30882 /* EDPellCollectionSelect.m */,
+				1E78DD572BA99F2800B30882 /* EDPellselectColCell.h */,
+				1E78DD582BA99F2800B30882 /* EDPellselectColCell.m */,
+				1E78DD562BA99F2800B30882 /* EDPellselectColCell.xib */,
 				6003F59C195388D20070C39A /* GGXAppDelegate.h */,
 				6003F59D195388D20070C39A /* GGXAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -258,6 +275,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -279,6 +297,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				1E78DD5D2BA99F2900B30882 /* EDPellselectColCell.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -324,11 +343,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GXArrowView_Example/Pods-GXArrowView_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GGXSwiftExtension/GGXSwiftExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/GXArrowView/GXArrowView.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GGXSwiftExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GXArrowView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,9 +387,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E78DD5E2BA99F2900B30882 /* EDPellselectColCell.m in Sources */,
+				1E78DD5B2BA99F2900B30882 /* EDArrowView.m in Sources */,
 				6003F59E195388D20070C39A /* GGXAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* GGXViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				1E78DD5C2BA99F2900B30882 /* EDPellCollectionSelect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

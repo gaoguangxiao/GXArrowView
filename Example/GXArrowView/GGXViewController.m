@@ -7,7 +7,7 @@
 //
 
 #import "GGXViewController.h"
-
+#import "EDArrowView.h"
 @interface GGXViewController ()
 
 @end
@@ -18,6 +18,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"ad");
+    //增加年度筛选
+    EDArrowView *arrowView = [[EDArrowView alloc]init];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:arrowView];
+    
 }
 
 - (void)didReceiveMemoryWarning

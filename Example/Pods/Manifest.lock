@@ -1,0 +1,28 @@
+PODS:
+  - GGXSwiftExtension (0.4.8)
+  - GXArrowView (0.1.0):
+    - GGXSwiftExtension
+    - Masonry
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - GXArrowView (from `../`)
+  - Masonry
+
+SPEC REPOS:
+  trunk:
+    - GGXSwiftExtension
+    - Masonry
+
+EXTERNAL SOURCES:
+  GXArrowView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GGXSwiftExtension: 0379bada1d373fcdeb8324ae4271f0dba58ffca3
+  GXArrowView: 93ed0c93f2e7df5ffca2770fca89f1633981053f
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: d3f619159a8e71d1487eeb685072ae7bc4b9a835
+
+COCOAPODS: 1.15.0
