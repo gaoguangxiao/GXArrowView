@@ -102,6 +102,7 @@
         }
     } hidden:^{
         self.yearBtn.selected = NO;
+        self.yearImg.transform = CGAffineTransformIdentity;
     } animated:YES];
 }
 

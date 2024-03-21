@@ -19,10 +19,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"ad");
     //增加年度筛选
     EDArrowView *arrowView = [[EDArrowView alloc]init];
-    arrowView.yearData = @[@"2024",@"2023",@"2022",@"2021"];
+    // 2024 最近20年获取的数组
+    NSMutableArray *years = [NSMutableArray new];
+    for (NSInteger i = 2024; i > 2000; i--) {
+        [years addObject:[NSString stringWithFormat:@"%ld",i]];
+    }
+    arrowView.yearData = years;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:arrowView];
     
 }

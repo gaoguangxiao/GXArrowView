@@ -11,6 +11,7 @@
 #import "EDPellselectColCell.h"
 #import "EDPellselectModel.h"
 #import "NSBundle+Pell.h"
+#import "EDMaskView.h"
 #import <GGXSwiftExtension/GGXSwiftExtension-Swift.h>
 
 @interface EDPellCollectionSelect ()<UICollectionViewDelegate,UICollectionViewDataSource>
@@ -25,10 +26,9 @@
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 ///蒙版 顶部遮罩 不透明可点击取消
-@property (nonatomic, strong) UIView *maskTopView;
+@property (nonatomic, strong) EDMaskView *maskTopView;
 
-///蒙版 遮罩 黑色透明可点击取消
-@property (nonatomic, strong) UIView *maskView;
+@property (nonatomic, strong) UIVisualEffectView *effectView;
 
 @property (nonatomic, strong) UIView *contentView;
 
@@ -53,30 +53,19 @@ EDPellCollectionSelect * backgroundView;
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.maskTopView];
-        [self addSubview:self.maskView];
+//        [self addSubview:self.maskView];
         [self addSubview:self.contentView];
         [self.contentView addSubview:self.titleLab];
         [self.contentView addSubview:self.collectionView];
         [self.contentView addSubview:self.resetBtn];
         [self.contentView addSubview:self.confirBtn];
         
-        //other
-    //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackgroundClick)];
-    //    [backgroundView addGestureRecognizer:tap];
+        self.maskTopView.frame = frame;
 
-        [self.maskTopView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(0);
-        }];
-        
-        [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(0);
-            make.left.bottom.right.mas_equalTo(0);
-        }];
-        
         [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.maskView.mas_top);
+            make.top.mas_equalTo(0);
             make.left.right.mas_equalTo(0);
-            make.height.mas_equalTo(0);
+            make.height.mas_equalTo(130);
         }];
         
         [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -118,10 +107,7 @@ EDPellCollectionSelect * backgroundView;
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackgroundClick)];
         [self.maskTopView addGestureRecognizer:tap];
-        //设置代理
-//        self.collectionView.delegate = self;
-//        self.collectionView.dataSource = self;
-//        self.collectionView.showsVerticalScrollIndicator = NO;
+        
     }
     return self;
 }
@@ -134,13 +120,12 @@ EDPellCollectionSelect * backgroundView;
     if (backgroundView != nil) {
         [EDPellCollectionSelect hiden];
     }
-    UIWindow *win = [self getKeyWindow];
+    UIWindow *win = [UIApplication rootWindow];
     
     backgroundView = [[EDPellCollectionSelect alloc] initWithFrame:win.bounds];
     backgroundView.action = action;
     backgroundView.hidden  = hidden;
     backgroundView.selectData = selectData;
-//    backgroundView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6];
     [win addSubview:backgroundView];
     
     // 计算行数
@@ -149,11 +134,12 @@ EDPellCollectionSelect * backgroundView;
     CGFloat contentHeight = row * 35 + (row - 1) * 10;
     // 计算总高度
     CGFloat allHeight = contentHeight + 42 + 85;
-    [backgroundView.maskView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(rect.origin.y);
-    }];
+    
+    [backgroundView.maskTopView setAlphaRect:CGRectMake(0, 0, win.width, rect.origin.y)];
+
     //高度计算
     [backgroundView.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(rect.origin.y);
         make.height.mas_equalTo(allHeight);
     }];
     [backgroundView.collectionView reloadData];
@@ -162,7 +148,6 @@ EDPellCollectionSelect * backgroundView;
         backgroundView.contentView.alpha = 0;
         [UIView animateWithDuration:0.3 animations:^{
             backgroundView.contentView.alpha = 1.0;
-//            backgroundView.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0);
         }];
     }
 }
@@ -177,40 +162,13 @@ EDPellCollectionSelect * backgroundView;
     if (backgroundView != nil) {
         
         [UIView animateWithDuration:0.3 animations:^{
-//            UIWindow * win = [[[UIApplication sharedApplication] windows] firstObject];
-//            tableView.frame = CGRectMake(win.bounds.size.width - 35 , 64, 0, 0);
 //            collectionView.transform = CGAffineTransformMakeScale(0.000001, 0.0001);
         } completion:^(BOOL finished) {
             backgroundView.hidden();
             [backgroundView removeFromSuperview];
-//            [collectionView removeFromSuperview];
-//            collectionView = nil;
             backgroundView = nil;
         }];
     }
-   
-}
-
-+ (UIWindow*)getKeyWindow
-{
-    if(@available(iOS 13.0, *)) {
-        for(UIWindowScene* scene in [UIApplication sharedApplication].connectedScenes) {
-            if(scene.activationState == UISceneActivationStateForegroundActive) {
-                if(@available(iOS 15.0, *)) {
-                    return scene.keyWindow;
-                }else{
-                    for(UIWindow* window in scene.windows) {
-                        if(window.isKeyWindow) {
-                            return window;
-                        }
-                    }
-                }
-            }
-        }
-    }else{
-        return [UIApplication sharedApplication].keyWindow;
-    }
-    return nil;
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -244,19 +202,6 @@ EDPellCollectionSelect * backgroundView;
     float itemWidth = (UIScreen.mainScreen.bounds.size.width - 29 * 2 - 20 * 3) / 4;
     return CGSizeMake(itemWidth, 35);
 }
-
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    //展示四个
-//    return CGSizeMake(100, 35);
-//    
-//}
-
-//定义每个UICollectionView 的间距
-//-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-//{
-//    return UIEdgeInsetsMake(0, 0, 0, 0);
-//
-//}
 
 //定义每个UICollectionView 纵向的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
@@ -294,7 +239,7 @@ EDPellCollectionSelect * backgroundView;
 }
 
 - (void)didConfirClick {
-    
+
     [EDPellCollectionSelect hiden];
     
     EDPellselectModel *seletedModel = nil;
@@ -333,21 +278,11 @@ EDPellCollectionSelect * backgroundView;
     return _collectionView;
 }
 
-- (UIView *)maskTopView {
+- (EDMaskView *)maskTopView {
     if (!_maskTopView) {
-        _maskTopView = [UIView new];
-//        _maskTopView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.3];;
+        _maskTopView = [EDMaskView new];
     }
     return _maskTopView;
-}
-
-- (UIView *)maskView {
-    if (!_maskView) {
-        _maskView = [UIView new];
-        _maskView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.3];
-        _maskView.userInteractionEnabled = NO;
-    }
-    return _maskView;
 }
 
 - (UIView *)contentView {
@@ -374,7 +309,7 @@ EDPellCollectionSelect * backgroundView;
         [_resetBtn setTitleColor:[[UIColor alloc]initWithHex:@"#919192" :1.0] forState:UIControlStateNormal];
         _resetBtn.layer.cornerRadius = 3;
         [_resetBtn setBackgroundColor:[UIColor colorFrom:@"#EDEDED" alpha:1.0]];//:EDEDED]];//crazy_hex:@"#EDEDED"]];
-        [_resetBtn addTarget:self action:@selector(didResetClick) forControlEvents:UIControlEventAllEvents];
+        [_resetBtn addTarget:self action:@selector(didResetClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return  _resetBtn;
 }
@@ -386,7 +321,7 @@ EDPellCollectionSelect * backgroundView;
         [_confirBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         _confirBtn.layer.cornerRadius = 3;
         [_confirBtn setBackgroundColor:[UIColor colorFrom:@"#D13D2D" alpha:1.0]];
-        [_confirBtn addTarget:self action:@selector(didConfirClick) forControlEvents:UIControlEventAllEvents];
+        [_confirBtn addTarget:self action:@selector(didConfirClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _confirBtn;
 }

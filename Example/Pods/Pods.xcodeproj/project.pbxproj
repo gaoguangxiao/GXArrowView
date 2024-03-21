@@ -16,6 +16,10 @@
 		1AC83FEDF1D9381D8E7BDAEBC89123FA /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5059B9DFA19DE20E5D56987503BF65EB /* MASViewConstraint.m */; };
 		1ACE35CB3BC72E20D6DD1ED6BF06C2AF /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F6C7CCDC9BB399801FFD0F9FD8CCDE1 /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CFE94783F68236F7DA041FDC8EA1D15 /* LogSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F640136A9B851C5A1C176C6A0D296763 /* LogSwift.swift */; };
+		1EA0AC052BAC4BC2002907F3 /* EDMaskView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EA0AC032BAC4BC2002907F3 /* EDMaskView.h */; };
+		1EA0AC062BAC4BC2002907F3 /* EDMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0AC042BAC4BC2002907F3 /* EDMaskView.m */; };
+		1EA0AC092BAC522D002907F3 /* EDPellContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EA0AC072BAC522D002907F3 /* EDPellContentView.h */; };
+		1EA0AC0A2BAC522D002907F3 /* EDPellContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA0AC082BAC522D002907F3 /* EDPellContentView.m */; };
 		26B8E0115B545F0658A7D6902E4FC7C8 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D519C16B6EF914631356156602B96E6 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27EE24BDA5708AEE5C80D0D43E3F2E8F /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA85F976AEEBE28ECD46927F95FDF07 /* Dictionary+Extension.swift */; };
 		281FD0BB6726169BD38E7267CD743AB9 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D6389E508378D876D5EE26D69EF90E /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -141,7 +145,7 @@
 		066EF335809F7AED85964E26A7F6131C /* Pods-GXArrowView_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-GXArrowView_Example"; path = Pods_GXArrowView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09054ACFF46DFFB989B6AEE016633521 /* Pods-GXArrowView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GXArrowView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		0B4528FABD695309E5D3B383BE7D5B66 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "GGXSwiftExtension/Classes/String+Extension.swift"; sourceTree = "<group>"; };
-		0CE2690729AFC328750206B7CE14F6DA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0CE2690729AFC328750206B7CE14F6DA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1098D59085B8FD181D73E5DBD6F930A3 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		11B06E54795D7EC4C6D7885B1F4149E9 /* Pods-GXArrowView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GXArrowView_Example.modulemap"; sourceTree = "<group>"; };
 		13FE3A761D7B4D329174F2B4138A0D07 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
@@ -149,6 +153,10 @@
 		18490670E752445A9C00B2BC13F40446 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		19E0B0C1106141DCD577A514E05114C8 /* UserDefault+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UserDefault+Extension.swift"; path = "GGXSwiftExtension/Classes/UserDefault+Extension.swift"; sourceTree = "<group>"; };
 		19EFBFA31B500708157688EC45159587 /* GXArrowView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GXArrowView.debug.xcconfig; sourceTree = "<group>"; };
+		1EA0AC032BAC4BC2002907F3 /* EDMaskView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDMaskView.h; path = GXArrowView/Classes/EDMaskView.h; sourceTree = "<group>"; };
+		1EA0AC042BAC4BC2002907F3 /* EDMaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EDMaskView.m; path = GXArrowView/Classes/EDMaskView.m; sourceTree = "<group>"; };
+		1EA0AC072BAC522D002907F3 /* EDPellContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EDPellContentView.h; path = GXArrowView/Classes/EDPellContentView.h; sourceTree = "<group>"; };
+		1EA0AC082BAC522D002907F3 /* EDPellContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EDPellContentView.m; path = GXArrowView/Classes/EDPellContentView.m; sourceTree = "<group>"; };
 		1FD17D3A5CD678E3A75E83BAB4FECFFB /* TimerInterval+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimerInterval+Extension.swift"; path = "GGXSwiftExtension/Classes/TimerInterval+Extension.swift"; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* Masonry */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A0848E4736BD408C7CF1683A8A879B /* EDPellselectColCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EDPellselectColCell.h; path = GXArrowView/Classes/EDPellselectColCell.h; sourceTree = "<group>"; };
@@ -201,7 +209,7 @@
 		98A2B95059FCD90B4ED59F2BC4F4D174 /* GGXSwiftExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GGXSwiftExtension-dummy.m"; sourceTree = "<group>"; };
 		98CD228B612908BDE8C0E7A7C374B415 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableViewCell+Extension.swift"; path = "GGXSwiftExtension/Classes/UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		9B513918C02673B19811973FF0F7AADD /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2259E3E5C0C32033D4F4A9F31E23756 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		A56A39498DB652299D069BD4F9C3046C /* Double+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Double+Extension.swift"; path = "GGXSwiftExtension/Classes/Double+Extension.swift"; sourceTree = "<group>"; };
 		A5E9AEC6B8208441044FFA6FF1FB4109 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = GGXSwiftExtension/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
@@ -218,12 +226,12 @@
 		B9D1A5F13A99E7AB12047FB4EC322CE0 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		BF4C203598B0F8A60D596761BD4C7229 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		C1BFF4F3D84DC5A5DA95B70226DA168C /* Pods-GXArrowView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GXArrowView_Example-dummy.m"; sourceTree = "<group>"; };
-		C4E20CEC904AE078CA91ACFF37906ED8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C4E20CEC904AE078CA91ACFF37906ED8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C59F997B37AD29CB81AFC74AB3BFC94F /* WKWebView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WKWebView+Extension.swift"; path = "GGXSwiftExtension/Classes/WKWebView+Extension.swift"; sourceTree = "<group>"; };
 		C666BA2739BBE375548195145F95C5A1 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		C72E570B1C9551D4C0E51E6A5977D0E5 /* Pods-GXArrowView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GXArrowView_Example-umbrella.h"; sourceTree = "<group>"; };
 		C8ABF6009BF2896C5F166CD29FF20DE6 /* URL+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+Extension.swift"; path = "GGXSwiftExtension/Classes/URL+Extension.swift"; sourceTree = "<group>"; };
-		CC4773A21E0FCAFE79275AED454D2D6C /* GXArrowView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GXArrowView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CC4773A21E0FCAFE79275AED454D2D6C /* GXArrowView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GXArrowView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D355CC00932CE7707E9CF6C83E04F161 /* GGXSwiftExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GGXSwiftExtension-umbrella.h"; sourceTree = "<group>"; };
 		D3D25A49CF0444B265491038465B26F2 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
@@ -300,11 +308,15 @@
 			children = (
 				DC8A025E201EBDE40B7AF49DF4066BD2 /* EDPellCollectionSelect.h */,
 				33323E9B910BB01BE2D1A305CB09C194 /* EDPellCollectionSelect.m */,
+				1EA0AC072BAC522D002907F3 /* EDPellContentView.h */,
+				1EA0AC082BAC522D002907F3 /* EDPellContentView.m */,
 				23A0848E4736BD408C7CF1683A8A879B /* EDPellselectColCell.h */,
 				4E1280A4C05B0F6BDA0C7425EB835738 /* EDPellselectColCell.m */,
 				4DF90C3EDE05668B86A4C6F945B39D6A /* EDPellselectColCell.xib */,
 				B65BFB15923B04FA0D7FB234E8E583F2 /* EDPellselectModel.h */,
 				337791CC3081B350ECAD5B05448F904C /* EDPellselectModel.m */,
+				1EA0AC032BAC4BC2002907F3 /* EDMaskView.h */,
+				1EA0AC042BAC4BC2002907F3 /* EDMaskView.m */,
 				543D96E6EBF878980F8F690834A62CA5 /* NSBundle+Pell.h */,
 				F8DC9E23AF437410280E6BCD6F5A69D7 /* NSBundle+Pell.m */,
 				2985AFE844BAE843631A828DF6B0AE4D /* Pod */,
@@ -391,7 +403,6 @@
 				C59F997B37AD29CB81AFC74AB3BFC94F /* WKWebView+Extension.swift */,
 				E92E4E255597D46839F9D0215BD273B6 /* Support Files */,
 			);
-			name = GGXSwiftExtension;
 			path = GGXSwiftExtension;
 			sourceTree = "<group>";
 		};
@@ -486,7 +497,6 @@
 				D4D36F5249EA7507E8F371135472C2EE /* ViewController+MASAdditions.m */,
 				35BD59E2315913992E679F25C7949B4F /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -596,10 +606,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA0AC052BAC4BC2002907F3 /* EDMaskView.h in Headers */,
 				0B999C4BBBBC923F3F753335B9934882 /* EDPellCollectionSelect.h in Headers */,
 				EC31E7218B99F365A5CF4C5A85E5C3C1 /* EDPellselectColCell.h in Headers */,
 				6D2AE793CAB0337A5DAF049976B685B3 /* EDPellselectModel.h in Headers */,
 				DC1FA1A9CFC7502A391C44F894225382 /* GXArrowView-umbrella.h in Headers */,
+				1EA0AC092BAC522D002907F3 /* EDPellContentView.h in Headers */,
 				47260DB666AAB46AE149BBC8DCE2EE18 /* NSBundle+Pell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -805,6 +817,8 @@
 			files = (
 				5466EA9C97DC563DDA6949000BE393BF /* EDPellCollectionSelect.m in Sources */,
 				D441232F7277A3D85520FCBD38C8BD3E /* EDPellselectColCell.m in Sources */,
+				1EA0AC0A2BAC522D002907F3 /* EDPellContentView.m in Sources */,
+				1EA0AC062BAC4BC2002907F3 /* EDMaskView.m in Sources */,
 				7DC196505DB6C249237435238C1CAA82 /* EDPellselectColCell.xib in Sources */,
 				CC1F857CC5EB41051BAFDFE5619907E3 /* EDPellselectModel.m in Sources */,
 				B63D21A4EA4688D0455F781B97180E6B /* GXArrowView-dummy.m in Sources */,
@@ -1143,8 +1157,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
