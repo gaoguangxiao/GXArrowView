@@ -1,6 +1,6 @@
 PODS:
-  - GGXSwiftExtension (0.5.0)
-  - GXArrowView (0.1.0):
+  - GGXSwiftExtension (0.5.5)
+  - GXArrowView (0.1.1):
     - GGXSwiftExtension
     - Masonry
   - Masonry (1.1.0)
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GGXSwiftExtension: 1d1a8158b961dc4e4689280e6b83402cc760317d
-  GXArrowView: c015072f9f97c1a3ee1f2ae1f6d3df0cc5a65926
+  GGXSwiftExtension: 5a7e70c20be64f4f1cf02c063adcb76e1d2f8bcb
+  GXArrowView: 647fcd801096335a549db40dc5a88bddf6ce7a68
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 41f64356fc3d0a5faff3664bcb15d07c08e8de09
+PODFILE CHECKSUM: b7acb5933fe859577d1840e861663ff4eb95c40a
 
 COCOAPODS: 1.15.0

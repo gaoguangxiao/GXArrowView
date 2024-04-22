@@ -507,6 +507,16 @@ public func flatSpecificScale(_ value: CGFloat, _ scale: CGFloat) -> CGFloat {
         }
     }
     
+    /// 获取window安全域左边间距
+    static var getSafeAreaRight: CGFloat {
+        guard let window = UIApplication.rootWindow else { return 0 }
+        if #available(iOS 11.0, *) {
+            return window.safeAreaInsets.right
+        } else {
+            return 0
+        }
+    }
+    
     //底部安全域
     @objc static var getTouchBarHeight: CGFloat {
         var touchBarH: CGFloat = 0

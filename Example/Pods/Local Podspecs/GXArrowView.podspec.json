@@ -1,7 +1,7 @@
 {
   "name": "GXArrowView",
-  "version": "0.1.0",
-  "summary": "下拉箭头筛选",
+  "version": "0.1.1",
+  "summary": "优化蒙版，一层半透明全透明",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/gaoguangxiao",
   "license": {
@@ -13,12 +13,17 @@
   },
   "source": {
     "git": "https://github.com/gaoguangxiao/GXArrowView.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "10.0"
   },
   "source_files": "GXArrowView/Classes/**/*",
+  "resource_bundles": {
+    "GXArrowView": [
+      "GXArrowView/Assets/*.xcassets"
+    ]
+  },
   "dependencies": {
     "Masonry": [
 

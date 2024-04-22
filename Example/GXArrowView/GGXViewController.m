@@ -9,6 +9,7 @@
 #import "GGXViewController.h"
 #import "EDArrowView.h"
 #import "GXArrowView/GXArrowView-umbrella.h"
+#import <Masonry.h>
 @interface GGXViewController ()
 
 @end
@@ -20,15 +21,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     //增加年度筛选
-    EDArrowView *arrowView = [[EDArrowView alloc]init];
-    // 2024 最近20年获取的数组
-    NSMutableArray *years = [NSMutableArray new];
-    for (NSInteger i = 2024; i > 2000; i--) {
-        [years addObject:[NSString stringWithFormat:@"%ld",i]];
-    }
-    arrowView.yearData = years;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:arrowView];
-    
+//    EDArrowView *arrowView = [[EDArrowView alloc]init];
+//    // 2024 最近20年获取的数组
+//    NSMutableArray *years = [NSMutableArray new];
+//    for (NSInteger i = 2024; i > 2000; i--) {
+//        [years addObject:[NSString stringWithFormat:@"%ld",i]];
+//    }
+//    arrowView.yearData = years;
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:arrowView];
+ 
+    //积分弹框
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"积分" style:UIBarButtonItemStyleDone target:self action:@selector(testScore)];
+}
+
+- (void)testScore {
+    EDScoreAcquisitionView *view = [EDScoreAcquisitionView share];
+    [view setacquisitionScore:@"100" vanishCount:3];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,3 +46,4 @@
 }
 
 @end
+
